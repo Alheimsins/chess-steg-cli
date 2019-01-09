@@ -40,34 +40,33 @@ npm i -g chess-steg-cli
 ## Steg example
 
 ```bash
+# Steg
 npx chess-steg-cli -s "hello world"
 # Outputs: 1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0
-```
 
-## Steg and open in browser
-
-```bash
+# Steg and open in browser
 npx chess-steg-cli -o -s "hello world"
 # Outputs: 1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0
 # https://lichess.org/ZKWeECmI
+
+# Steg without blunders
+npx chess-steg-cli -w -s "hello world"
+# Outputs: 1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7. a4 Qc7 8. Kf2 a6 9. Bc4 Nc6 10. e4 Ke7 11. d3 Qd7 12. Ke1 Bg7 13. f4 Nb8 { White resigns. } 0-1
 ```
 
 ## Unsteg example
 
 ```bash
+# Unsteg
 npx chess-steg-cli "1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0"
 # Outputs: hello world
-```
 
-## Steg without blunders example
-```bash
-npx chess-steg-cli -w -s "hello world"
-# Outputs: 1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7. a4 Qc7 8. Kf2 a6 9. Bc4 Nc6 10. e4 Ke7 11. d3 Qd7 12. Ke1 Bg7 13. f4 Nb8 { White resigns. } 0-1
-```
+# Unsteg and open in browser
+npx chess-steg-cli -o -u "1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0"
+# Outputs: hello world
+# https://lichess.org/ZKWeECmI
 
-## Unsteg without blunders example 
-
-```bash
+# Unsteg without blunders example
 npx chess-steg-cli -w -u "1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7. a4 Qc7 8. Kf2 a6 9. Bc4 Nc6 10. e4 Ke7 11. d3 Qd7 12. Ke1 Bg7 13. f4 Nb8 { White resigns. } 0-1"
 # Outputs: hello world
 ```
