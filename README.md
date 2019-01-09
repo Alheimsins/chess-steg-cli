@@ -34,7 +34,7 @@ Install [node.js](https://nodejs.org/en/)
 
 ```bash
 npm i -g chess-steg-cli
-# The use the "chess-steg" to run it
+# Then use the "chess-steg" to run it
 ```
 
 ## Steg example
