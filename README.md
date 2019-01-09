@@ -24,7 +24,6 @@ More information in James Stanleys blog post: https://incoherency.co.uk/blog/sto
 | -u, --unsteg        | Unsteg chess PGN          |
 | -w, --without-blunders | (un)steg without blunders (disabled by default) |
 | -d, --debug         | Debug error messages      |
-| -u, --username      | username                  |
 
 ## Requirements
 
