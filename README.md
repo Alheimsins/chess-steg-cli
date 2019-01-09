@@ -30,6 +30,13 @@ More information in James Stanleys blog post: https://incoherency.co.uk/blog/sto
 
 Install [node.js](https://nodejs.org/en/)
 
+## Install globally
+
+```bash
+npm i -g chess-steg-cli
+# The use the "chess-steg" to run it
+```
+
 ## Steg example
 
 ```bash
