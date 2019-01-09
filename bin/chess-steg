@@ -3,9 +3,29 @@
 const args = require('args')
 const { chess_steg, chess_unsteg } = require('../src/index')
 
+const { stringify } = require('querystring')
+const axios = require('axios')
+const open = require('open')
+
+const getPgnUrl = async (pgn, flags) => {
+  const options = {
+    method: 'POST',
+    data: stringify({ pgn: pgn })
+  }
+  try {
+    const { request: { res } } = await axios('https://lichess.org/import', options)
+    return res.responseUrl
+  } catch (error) {
+    console.error('Could not get lichess.org URL')
+    if (flags.debug) console.error(error)
+  }
+
+}
+
 args
   .option('steg', 'Steg string')
   .option('unsteg', 'Unsteg chess PGN')
+  .option('open', 'Open steg PGN in browser (only works with --steg)')
   .option('without-blunders', '(un)steg without blunders', false)
   .option('debug', 'Turn on debug info', false)
 
@@ -18,6 +38,13 @@ if (flags.steg) {
   try {
     const pgn = chess_steg(flags.steg, flags.withoutBlunders)
     console.log(pgn)
+    if (flags.open) {
+      getPgnUrl(pgn)
+        .then(url => {
+          console.log(url)
+          open(url)
+        })
+    }
   } catch (error) {
     console.error('ERROR: Could not steg string')
     if (flags.debug) console.error(error)

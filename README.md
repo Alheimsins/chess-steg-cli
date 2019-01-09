@@ -22,6 +22,8 @@ More information in James Stanleys blog post: https://incoherency.co.uk/blog/sto
 | -h, --help          | Display help              |
 | -s, --steg          | Steg string               |
 | -u, --unsteg        | Unsteg chess PGN          |
+
+| -o, --opne        | Open steg PGN in browser (only works with --steg) |
 | -w, --without-blunders | (un)steg without blunders (disabled by default) |
 | -d, --debug         | Debug error messages      |
 
@@ -41,6 +43,15 @@ npm i -g chess-steg-cli
 ```bash
 npx chess-steg-cli -s "hello world"
 # Outputs: 1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0
+```
+
+## Steg and open in browser
+
+```      
+```bash
+npx chess-steg-cli -o -s "hello world"
+# Outputs: 1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0
+# https://lichess.org/ZKWeECmI
 ```
 
 ## Unsteg example

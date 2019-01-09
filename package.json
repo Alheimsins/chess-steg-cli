@@ -1,6 +1,6 @@
 {
   "name": "chess-steg-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Client for chess steganography - Hiding messages in chess games",
   "main": "index.js",
   "author": "",
@@ -33,8 +33,10 @@
   "license": "MIT",
   "dependencies": {
     "args": "5.0.0",
+    "axios": "0.18.0",
     "big-integer": "1.6.40",
-    "chess.js": "0.10.2"
+    "chess.js": "0.10.2",
+    "open": "0.0.5"
   },
   "devDependencies": {
     "ava": "1.0.1",
