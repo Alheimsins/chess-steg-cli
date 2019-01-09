@@ -25,7 +25,7 @@ const getPgnUrl = async (pgn, flags) => {
 args
   .option('steg', 'Steg string')
   .option('unsteg', 'Unsteg chess PGN')
-  .option('open', 'Open steg PGN in browser (only works with --steg)')
+  .option('open', 'Open steg PGN in browser')
   .option('without-blunders', '(un)steg without blunders', false)
   .option('debug', 'Turn on debug info', false)
 
@@ -39,7 +39,7 @@ if (flags.steg) {
     const pgn = chess_steg(flags.steg, flags.withoutBlunders)
     console.log(pgn)
     if (flags.open) {
-      getPgnUrl(pgn)
+      getPgnUrl(pgn, flags)
         .then(url => {
           console.log(url)
           open(url)
@@ -55,6 +55,13 @@ if (flags.unsteg) {
   try {
     const string = chess_unsteg(flags.unsteg, flags.withoutBlunders)
     console.log(string)
+    if (flags.open) {
+      getPgnUrl(flags.unsteg, flags)
+        .then(url => {
+          console.log(url)
+          open(url)
+        })
+    }
   } catch (error) {
     console.error('ERROR: Could not unsteg PGN')
     if (flags.debug) console.error(error)

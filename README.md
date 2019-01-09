@@ -22,7 +22,7 @@ More information in James Stanleys blog post: https://incoherency.co.uk/blog/sto
 | -h, --help          | Display help              |
 | -s, --steg          | Steg string               |
 | -u, --unsteg        | Unsteg chess PGN          |
-| -o, --open        | Open steg PGN in browser (only works with --steg) |
+| -o, --open        | Open steg PGN in browser    |
 | -w, --without-blunders | (un)steg without blunders (disabled by default) |
 | -d, --debug         | Debug error messages      |
 
