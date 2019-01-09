@@ -1,6 +1,6 @@
 {
   "name": "chess-steg-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Client for chess steganography - Hiding messages in chess games",
   "main": "index.js",
   "author": "",
