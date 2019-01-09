@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+const args = require('args')
+const { chess_steg, chess_unsteg } = require('../src/index')
+
+args
+  .option('steg', 'Steg string')
+  .option('unsteg', 'Unsteg chess PGN')
+  .option('without-blunders', '(un)steg without blunders', false)
+  .option('debug', 'Turn on debug info', false)
+
+const flags = args.parse(process.argv)
+if (!flags.steg && !flags.unsteg) {
+  args.showHelp()
+}
+
+if (flags.steg) {
+  try {
+    const pgn = chess_steg(flags.steg, flags.withoutBlunders)
+    console.log(pgn)
+  } catch (error) {
+    console.error('ERROR: Could not steg string')
+    if (flags.debug) console.error(error)
+  }
+}
+
+if (flags.unsteg) {
+  try {
+    const string = chess_unsteg(flags.unsteg, flags.withoutBlunders)
+    console.log(string)
+  } catch (error) {
+    console.error('ERROR: Could not unsteg PGN')
+    if (flags.debug) console.error(error)
+  }
+}

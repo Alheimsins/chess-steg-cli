@@ -1,0 +1,43 @@
+{
+  "name": "chess-steg-cli",
+  "version": "1.0.0",
+  "description": "Client for chess steganography - Hiding messages in chess games",
+  "main": "index.js",
+  "author": "",
+  "scripts": {
+    "test": "standard && npm audit && ava"
+  },
+  "standard": {
+    "ignore": [
+      "src/*"
+    ]
+  },
+  "files": [
+    "src/*",
+    "bin/*"
+  ],
+  "bin": {
+    "chess-steg": "./bin/chess-steg"
+  },
+  "keywords": [
+    "chess",
+    "steganography"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alheimsins/chess-steg-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alheimsins/chess-steg-cli/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "args": "5.0.0",
+    "big-integer": "1.6.40",
+    "chess.js": "0.10.2"
+  },
+  "devDependencies": {
+    "ava": "1.0.1",
+    "standard": "12.0.1"
+  }
+}
