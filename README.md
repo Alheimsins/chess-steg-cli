@@ -50,13 +50,13 @@ npx chess-steg-cli "1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 
 # Outputs: hello world
 ```
 
-# Steg without blunders
+## Steg without blunders example
 ```bash
 npx chess-steg-cli -w -s "hello world"
 # Outputs: 1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7. a4 Qc7 8. Kf2 a6 9. Bc4 Nc6 10. e4 Ke7 11. d3 Qd7 12. Ke1 Bg7 13. f4 Nb8 { White resigns. } 0-1
 ```
 
-## Unsteg example
+## Unsteg without blunders example 
 
 ```bash
 npx chess-steg-cli -w -u "1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7. a4 Qc7 8. Kf2 a6 9. Bc4 Nc6 10. e4 Ke7 11. d3 Qd7 12. Ke1 Bg7 13. f4 Nb8 { White resigns. } 0-1"
