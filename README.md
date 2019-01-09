@@ -1,6 +1,6 @@
 # chess-steg-cli
 
-This is a cli that uses the awesome work by [James Stanley](https://github.com/jes/chess-steg)
+This is a cli that uses the awesome work by [James Stanley](https://github.com/jes)
 
 [chess-steg](https://github.com/jes/chess-steg) is a tool to encode/decode short messages as chess games.
 
