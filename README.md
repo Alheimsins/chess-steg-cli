@@ -12,7 +12,7 @@ This game encodes the text "Hello, world!":
 
 1. e3 b6 2. b3 Bb7 3. Nf3 Bxf3 4. Bd3 e6 5. h4 g6 6. b4 h5 7. gxf3 c5 8. Bb2 a5 9. Rh3 e5 10. c4 Bh6 11. Be2 Ke7 { White resigns. } 0-1
 
-More information in my blog post: https://incoherency.co.uk/blog/stories/chess-steg.html
+More information in James Stanleys blog post: https://incoherency.co.uk/blog/stories/chess-steg.html
 
 ## Help
 
