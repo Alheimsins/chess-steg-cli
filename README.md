@@ -29,7 +29,7 @@ More information in James Stanleys blog post: https://incoherency.co.uk/blog/sto
 
 Install [node.js](https://nodejs.org/en/)
 
-## Install globally
+## Install globally (or run it through npx)
 
 ```bash
 npm i -g chess-steg-cli
