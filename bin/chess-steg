@@ -1,69 +1,51 @@
 #!/usr/bin/env node
+(async () => {
+  const args = require('args')
+  const { chess_steg, chess_unsteg } = require('../src/index')
 
-const args = require('args')
-const { chess_steg, chess_unsteg } = require('../src/index')
+  const open = require('open')
+  const { getPgnUrl, getPgnFromId } = require('../src/helpers')
 
-const { stringify } = require('querystring')
-const axios = require('axios')
-const open = require('open')
+  args
+    .option('steg', 'Steg string')
+    .option('unsteg', 'Unsteg chess PGN or lichess ID')
+    .option('open', 'Open steg PGN in browser')
+    .option('without-blunders', '(un)steg without blunders', false)
+    .option('debug', 'Turn on debug info', false)
 
-const getPgnUrl = async (pgn, flags) => {
-  const options = {
-    method: 'POST',
-    data: stringify({ pgn: pgn })
-  }
-  try {
-    const { request: { res } } = await axios('https://lichess.org/import', options)
-    return res.responseUrl
-  } catch (error) {
-    console.error('Could not get lichess.org URL')
-    if (flags.debug) console.error(error)
+  const flags = args.parse(process.argv)
+  if (!flags.steg && !flags.unsteg) {
+    args.showHelp()
   }
 
-}
-
-args
-  .option('steg', 'Steg string')
-  .option('unsteg', 'Unsteg chess PGN')
-  .option('open', 'Open steg PGN in browser')
-  .option('without-blunders', '(un)steg without blunders', false)
-  .option('debug', 'Turn on debug info', false)
-
-const flags = args.parse(process.argv)
-if (!flags.steg && !flags.unsteg) {
-  args.showHelp()
-}
-
-if (flags.steg) {
-  try {
-    const pgn = chess_steg(flags.steg, flags.withoutBlunders)
-    console.log(pgn)
-    if (flags.open) {
-      getPgnUrl(pgn, flags)
-        .then(url => {
-          console.log(url)
-          open(url)
-        })
+  if (flags.steg) {
+    try {
+      const pgn = chess_steg(flags.steg, flags.withoutBlunders)
+      console.log(pgn)
+      if (flags.open) {
+        const url = await getPgnUrl(pgn, flags)
+        console.log(url)
+        open(url)
+      }
+    } catch (error) {
+      console.error('ERROR: Could not steg string')
+      if (flags.debug) console.error(error)
     }
-  } catch (error) {
-    console.error('ERROR: Could not steg string')
-    if (flags.debug) console.error(error)
   }
-}
 
-if (flags.unsteg) {
-  try {
-    const string = chess_unsteg(flags.unsteg, flags.withoutBlunders)
-    console.log(string)
-    if (flags.open) {
-      getPgnUrl(flags.unsteg, flags)
-        .then(url => {
-          console.log(url)
-          open(url)
-        })
+  if (flags.unsteg) {
+    try {
+      let pgn = !flags.unsteg.includes(' ') ? await getPgnFromId(flags.unsteg) : flags.unsteg
+      const string = chess_unsteg(pgn, flags.withoutBlunders)
+      console.log(string)
+      if (flags.open) {
+        const url = await getPgnUrl(flags.unsteg, flags)
+        console.log(url)
+        open(url)
+      }
+    } catch (error) {
+      console.error('ERROR: Could not unsteg PGN')
+      if (flags.debug) console.error(error)
     }
-  } catch (error) {
-    console.error('ERROR: Could not unsteg PGN')
-    if (flags.debug) console.error(error)
   }
-}
+})()

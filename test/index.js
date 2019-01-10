@@ -36,3 +36,9 @@ test('test unsteg without blunders', async t => {
   const result = stdout.slice(0, -1)
   t.is(result, testString)
 })
+
+test('test unsteg with lichess ID', async t => {
+  const { stdout } = await exec(`${path} -u ZKWeECmI`)
+  const result = stdout.slice(0, -1)
+  t.is(result, testString)
+})
