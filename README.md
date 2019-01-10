@@ -30,7 +30,7 @@ More information in James Stanleys blog post: https://incoherency.co.uk/blog/sto
 
 Install [node.js](https://nodejs.org/en/)
 
-## Install globally (or run it through npx)
+## Install globally (or run it without installing through [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b))
 
 ```bash
 npm i -g chess-steg-cli
