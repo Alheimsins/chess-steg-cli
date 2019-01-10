@@ -1,6 +1,6 @@
 # chess-steg-cli
 
-This is a cli that uses the awesome work by [James Stanley](https://github.com/jes)
+This is a cli that uses chess-steg, the awesome work by [James Stanley](https://github.com/jes)
 
 [chess-steg](https://github.com/jes/chess-steg) is a tool to encode/decode short messages as chess games.
 
@@ -58,7 +58,7 @@ npx chess-steg-cli -w -s "hello world"
 
 ```bash
 # Unsteg
-npx chess-steg-cli "1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0"
+npx chess-steg-cli -u "1. e3 Nh6 2. d4 Nf5 3. Qd2 Rg8 4. Ne2 c6 5. b3 d6 6. a3 Be6 7. d5 Kd7 8. Qd3 Kc8 9. Qb5 b6 10. Ng1 { Black resigns. } 1-0"
 # Outputs: hello world
 
 # Unsteg and open in browser
