@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { stringify } = require('querystring')
 
+// Post PGN to lichess.org/import and return lichess url
 const getPgnUrl = async (pgn, flags) => {
   const options = {
     method: 'POST',
@@ -12,15 +13,17 @@ const getPgnUrl = async (pgn, flags) => {
   } catch (error) {
     console.error('Could not get lichess.org URL')
     if (flags.debug) console.error(error)
+    throw error
   }
-
 }
 
+// Retrive PGN from lichess ID through lichess API. Returns PGN
 const getPgnFromId = async (id, flags) => {
+  // Adds full move numbers to PGN
   const numMoves = moves => {
     let moveCount = 0
     return moves.split(' ').map((move, i) => {
-      return ++i % 2 !== 0 ? `${++moveCount}. ${move}` : move
+      return ++i % 2 === 1 ? `${++moveCount}. ${move}` : move
     }).join(' ')
   }
   const axios = require('axios')
@@ -44,6 +47,7 @@ const getPgnFromId = async (id, flags) => {
   } catch (error) {
     console.error(`Could not get PGN from ${options.url}`)
     if (flags.debug) console.error(error)
+    throw error
   }
 }
 

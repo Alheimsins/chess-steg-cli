@@ -22,30 +22,35 @@
     try {
       const pgn = chess_steg(flags.steg, flags.withoutBlunders)
       console.log(pgn)
+      // Open lichess URL in browser
       if (flags.open) {
         const url = await getPgnUrl(pgn, flags)
         console.log(url)
         open(url)
       }
     } catch (error) {
-      console.error('ERROR: Could not steg string')
+      console.error('Error: Could not steg string')
       if (flags.debug) console.error(error)
+      process.exit(1)
     }
   }
 
   if (flags.unsteg) {
     try {
+      // Set PGN to value of input OR get it from lichess ID
       let pgn = !flags.unsteg.includes(' ') ? await getPgnFromId(flags.unsteg) : flags.unsteg
       const string = chess_unsteg(pgn, flags.withoutBlunders)
       console.log(string)
+      // Open lichess URL in browser
       if (flags.open) {
         const url = await getPgnUrl(flags.unsteg, flags)
         console.log(url)
         open(url)
       }
     } catch (error) {
-      console.error('ERROR: Could not unsteg PGN')
+      console.error('Error: Could not unsteg PGN')
       if (flags.debug) console.error(error)
+      process.exit(1)
     }
   }
 })()
