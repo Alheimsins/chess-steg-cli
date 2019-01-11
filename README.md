@@ -41,9 +41,7 @@ npm i -g chess-steg-cli
 chess-steg
 ```
 
-- OR -
-
-### Without installation - [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b))
+### Without installation - [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 
 ```bash
 npx chess-steg-cli
