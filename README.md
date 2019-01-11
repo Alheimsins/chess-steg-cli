@@ -84,3 +84,7 @@ chess-steg -w -u "1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7.
 chess-steg -u ZKWeECmI
 # Outputs: hello world
 ```
+
+# License
+
+[MIT](LICENSE)

@@ -5,7 +5,9 @@
   "main": "index.js",
   "author": "",
   "scripts": {
-    "test": "standard && ava"
+    "test": "standard && npm audit && ava",
+    "standard-fix": "standard --fix",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "standard": {
     "ignore": [
@@ -36,7 +38,7 @@
     "axios": "0.18.0",
     "big-integer": "1.6.40",
     "chess.js": "0.10.2",
-    "open": "0.0.5"
+    "opn": "5.4.0"
   },
   "devDependencies": {
     "ava": "1.0.1",

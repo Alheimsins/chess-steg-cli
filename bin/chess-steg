@@ -3,7 +3,7 @@
   const args = require('args')
   const { chess_steg, chess_unsteg } = require('../src/index')
 
-  const open = require('open')
+  const open = require('opn')
   const { getPgnUrl, getPgnFromId } = require('../src/helpers')
 
   args
