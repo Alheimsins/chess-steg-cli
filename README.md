@@ -21,7 +21,7 @@ More information in James Stanley's blog post: https://incoherency.co.uk/blog/st
 | -v, --version       | Output the version number |
 | -h, --help          | Display help              |
 | -s, --steg          | Steg string               |
-| -u, --unsteg        | Unsteg chess PGN or lichess ID |
+| -u, --unsteg        | Unsteg chess PGN, lichess url or lichess ID |
 | -o, --open        | Open steg PGN in browser    |
 | -w, --without-blunders | (un)steg without blunders (disabled by default) |
 | -d, --debug         | Debug error messages      |
@@ -82,6 +82,10 @@ chess-steg -w -u "1. Nf3 g6 2. e3 Bh6 3. a3 d6 4. Bb5+ Kf8 5. Ng1 e5 6. f3 c5 7.
 
 # Unsteg from lichess ID (last part of lichess url)
 chess-steg -u ZKWeECmI
+# Outputs: hello world
+
+# Unsteg from lichess url
+chess-steg -u https://lichess.org/ZKWeECmI
 # Outputs: hello world
 ```
 

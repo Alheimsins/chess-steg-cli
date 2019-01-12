@@ -1,5 +1,7 @@
 const axios = require('axios')
 const { stringify } = require('querystring')
+const isUrl = id => id.startsWith('http')
+const extractId = url => url.split('/').pop()
 
 // Post PGN to lichess.org/import and return lichess url
 const getPgnUrl = async (pgn, flags) => {
@@ -28,7 +30,7 @@ const getPgnFromId = async (id, flags) => {
   }
   const axios = require('axios')
   const options = {
-    url: `https://lichess.org/game/export/${id}`,
+    url: `https://lichess.org/game/export/${isUrl(id) ? extractId(id) : id}`,
     method: 'GET',
     headers: {
       Accept: 'application/json'
