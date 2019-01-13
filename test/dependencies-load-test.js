@@ -1,0 +1,26 @@
+const test = require('ava')
+const { dependencies, devDependencies } = require('../package.json')
+const dropModules = []
+const isDropped = module => !dropModules.includes(module)
+
+test('basic ava check', t => {
+  t.true(true, 'ava works ok')
+})
+
+if (dependencies) {
+  Object.keys(dependencies).filter(isDropped).forEach(dependency => {
+    test(`${dependency} loads ok`, t => {
+      const module = require(dependency)
+      t.truthy(module)
+    })
+  })
+}
+
+if (devDependencies) {
+  Object.keys(devDependencies).filter(isDropped).forEach(devDependency => {
+    test(`${devDependency} loads ok`, t => {
+      const module = require(devDependency)
+      t.truthy(module)
+    })
+  })
+}
