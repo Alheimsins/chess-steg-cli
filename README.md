@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/alheimsins/chess-steg-cli.svg?branch=master)](https://travis-ci.com/alheimsins/chess-steg-cli)
+[![Build Status](https://travis-ci.com/Alheimsins/chess-steg-cli.svg?branch=master)](https://travis-ci.com/Alheimsins/chess-steg-cli)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 # chess-steg-cli
