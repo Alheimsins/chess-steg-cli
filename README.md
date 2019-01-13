@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/alheimsins/chess-steg-cli.svg?branch=master)](https://travis-ci.com/alheimsins/chess-steg-cli)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 # chess-steg-cli
 
 This is a cli that uses chess-steg, the awesome work by [James Stanley](https://github.com/jes)
