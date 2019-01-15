@@ -38,6 +38,7 @@
     "axios": "0.18.0",
     "big-integer": "1.6.40",
     "chess.js": "0.10.2",
+    "clipboardy": "1.2.3",
     "opn": "5.4.0"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 (async () => {
   const args = require('args')
+  const clipboardy = require('clipboardy')
   const { chess_steg, chess_unsteg } = require('../src/index')
 
   const open = require('opn')
@@ -21,10 +22,12 @@
   if (flags.steg) {
     try {
       const pgn = chess_steg(flags.steg, flags.withoutBlunders)
+      await clipboardy.write(pgn)
       console.log(pgn)
       // Open lichess URL in browser
       if (flags.open) {
         const url = await getPgnUrl(pgn, flags)
+        await clipboardy.write(pgn)
         console.log(url)
         open(url)
       }
