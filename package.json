@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "args": "5.0.0",
+    "args": "5.0.1",
     "axios": "0.18.0",
     "big-integer": "1.6.42",
     "chess.js": "0.10.2",
