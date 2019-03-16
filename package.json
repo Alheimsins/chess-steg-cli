@@ -39,7 +39,7 @@
     "big-integer": "1.6.42",
     "chess.js": "0.10.2",
     "clipboardy": "1.2.3",
-    "opn": "5.4.0"
+    "opn": "5.5.0"
   },
   "devDependencies": {
     "ava": "1.3.1",
