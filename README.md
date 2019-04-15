@@ -97,3 +97,5 @@ chess-steg -u https://lichess.org/ZKWeECmI
 # License
 
 [MIT](LICENSE)
+
+#stegchess
