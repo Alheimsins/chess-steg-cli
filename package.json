@@ -34,7 +34,8 @@
   },
   "keywords": [
     "chess",
-    "steganography"
+    "steganography",
+    "chess-steg"
   ],
   "repository": {
     "type": "git",
