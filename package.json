@@ -3,7 +3,18 @@
   "version": "1.2.3",
   "description": "Client for chess steganography - Hiding messages in chess games",
   "main": "index.js",
-  "author": "",
+  "author": {
+    "name": "Jonas Enge",
+    "email": "jonas.enge@t-fk.no",
+    "url": "https://github.com/telemark"
+  },
+  "contributors": [
+    {
+      "name": "Geir Gåsodden",
+      "email": "geir.gasodden@pythonia.no",
+      "url": "https://github.com/zrrrzzt"
+    }
+  ],
   "scripts": {
     "test": "standard && npm audit && ava",
     "standard-fix": "standard --fix",
