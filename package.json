@@ -55,6 +55,6 @@
   },
   "devDependencies": {
     "ava": "2.3.0",
-    "standard": "14.2.0"
+    "standard": "14.3.0"
   }
 }
