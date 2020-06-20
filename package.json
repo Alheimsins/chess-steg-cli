@@ -49,7 +49,7 @@
     "args": "5.0.1",
     "axios": "0.19.2",
     "big-integer": "1.6.48",
-    "chess.js": "0.10.3",
+    "chess.js": "0.11.0",
     "clipboardy": "2.3.0",
     "opn": "5.5.0"
   },
