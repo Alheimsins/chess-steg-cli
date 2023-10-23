@@ -50,7 +50,7 @@
     "axios": "0.24.0",
     "big-integer": "1.6.51",
     "chess.js": "0.12.0",
-    "clipboardy": "3.0.0",
+    "clipboardy": "4.0.0",
     "opn": "5.5.0"
   },
   "devDependencies": {
