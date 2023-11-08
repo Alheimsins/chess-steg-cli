@@ -47,7 +47,7 @@
   "license": "MIT",
   "dependencies": {
     "args": "5.0.1",
-    "axios": "0.24.0",
+    "axios": "1.6.1",
     "big-integer": "1.6.51",
     "chess.js": "0.12.0",
     "clipboardy": "3.0.0",
